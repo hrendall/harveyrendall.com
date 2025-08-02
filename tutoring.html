@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tutoring - Harvey Rendall</title>
+    
+    <!-- Tailwind CSS CDN for development -->
+    <!-- Google Fonts for sophisticated typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700<script src="https://cdn.tailwindcss.com"></script>family=Playfair+Display:wght@400;500;600;700<script src="https://cdn.tailwindcss.com"></script>display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN for development -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for Dark Mode -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS for additional styling -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Meta tags for SEO and social sharing -->
+    <meta name="description" content="Professional maths and science tutoring from 11+ to A-Level with Harvey Rendall">
+    <meta name="keywords" content="Harvey Rendall, tutoring, maths tutor, science tutor, 11+, GCSE, A-Level, London">
+    <meta name="author" content="Harvey Rendall">
+    
+    <!-- Favicon (you can add your own favicon later) -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
+    
+    <!-- Main container with side navigation -->
+    <div class="flex h-screen">
+        
+        <!-- Side Navigation Bar -->
+        <nav class="w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700">
+            
+            <!-- Navigation Header with Name -->
+            <div class="px-8 py-6 border-b border-gray-200 dark:border-gray-700">
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white">Harvey Rendall</h1>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="p-4">
+                <ul class="space-y-2">
+                    <!-- Home Link -->
+                    <li>
+                        <a href="index.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                    
+                    <!-- Travels Link with Dropdown -->
+                    <li class="relative">
+                        <button id="travels-dropdown" 
+                                class="flex items-center justify-between w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Travels
+                            </div>
+                            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="travels-dropdown-menu" class="hidden mt-2 ml-4 space-y-1">
+                            <li>
+                                <a href="travels.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    All Travels
+                                </a>
+                            </li>
+                            <li>
+                                <a href="travels/lofotenIslands.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    The Lofoten Islands
+                                </a>
+                            </li>
+                            <li>
+                                <a href="travels/montBlanc.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Mont Blanc
+                                </a>
+                            </li>
+                            <li>
+                                <a href="travels/fiveHundredMilesToBilboa.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    500 Miles to Bilboa
+                                </a>
+                            </li>
+                            <li>
+                                <a href="travels/athensToVenice.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Athens to Venice in a Weekend
+                                </a>
+                            </li>
+                            <li>
+                                <a href="travels/tahitianPearlFarming.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Tahitian Pearl Farming
+                                </a>
+                            </li>
+                            <li>
+                                <a href="travels/scandinaviaByTrain.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Scandinavia by Train
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Articles Link with Dropdown -->
+                    <li class="relative">
+                        <button id="articles-dropdown" 
+                                class="flex items-center justify-between w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                                </svg>
+                                Articles
+                            </div>
+                            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="articles-dropdown-menu" class="hidden mt-2 ml-4 space-y-1">
+                            <li>
+                                <a href="articles.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    All Articles
+                                </a>
+                            </li>
+                            <li>
+                                <a href="articles/krushnicEffectEPQ.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Krushnic Effect EPQ
+                                </a>
+                            </li>
+                            <li>
+                                <a href="articles/riskAndOpportunityCost.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Risk and Opportunity Cost
+                                </a>
+                            </li>
+                            <li>
+                                <a href="articles/misleadingScalingLawsOfAI.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Misleading Scaling Laws of AI
+                                </a>
+                            </li>
+                            <li>
+                                <a href="articles/exponentialGrowthAndInequality.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Exponential Growth and Inequality
+                                </a>
+                            </li>
+                            <li>
+                                <a href="articles/caseForNuclearPower.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    The Case for Nuclear Power
+                                </a>
+                            </li>
+                            <li>
+                                <a href="articles/georgismInModernWorld.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Georgism in the Modern World
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Projects Link with Dropdown -->
+                    <li class="relative">
+                        <button id="projects-dropdown" 
+                                class="flex items-center justify-between w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Projects
+                            </div>
+                            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="projects-dropdown-menu" class="hidden mt-2 ml-4 space-y-1">
+                            <li>
+                                <a href="projects.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    All Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects/tutoringWebsite.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Tutoring Website
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects/programmableSmartCharger.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Programmable Smart Charger
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Tutoring Link -->
+                    <li>
+                        <a href="tutoring.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200 bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                            Tutoring
+                        </a>
+                    </li>
+                    
+                    <!-- CV Link -->
+                    <li>
+                        <a href="cv.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            CV
+                        </a>
+                    </li>
+                    
+                    <!-- Contact Link -->
+                    <li>
+                        <a href="contact.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Theme Toggle Button -->
+            <div class="absolute bottom-4 left-4">
+                <button id="theme-toggle" 
+                        class="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900">
+            
+            <!-- Page Header -->
+            <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+                <div class="px-8 py-6">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white font-display">Tutoring</h2>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <div class="p-8">
+                
+                <!-- Hero Section -->
+                <section class="mb-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                            <div class="text-center mb-8">
+                                <h3 class="text-4xl font-bold text-gray-900 dark:text-white mb-4 font-display">Maths & Science Tutoring</h3>
+                                <p class="text-xl text-gray-600 dark:text-gray-300">Professional tutoring from 11+ to A-Level</p>
+                            </div>
+                            
+                            <div class="grid md:grid-cols-2 gap-8 items-center">
+                                <div>
+                                    <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">About My Tutoring</h4>
+                                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                                        I'm a dedicated maths and science tutor with over two years of experience helping students 
+                                        achieve their academic goals. I specialize in making complex concepts accessible and 
+                                        building confidence in students of all abilities.
+                                    </p>
+                                    <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                                        My approach focuses on understanding each student's unique learning style and adapting 
+                                        my teaching methods accordingly. I believe in creating a supportive environment where 
+                                        students feel comfortable asking questions and making mistakes as part of the learning process.
+                                    </p>
+                                </div>
+                                
+                                <div class="bg-blue-50 dark:bg-gray-700 rounded-lg p-6">
+                                    <h5 class="text-xl font-bold text-gray-900 dark:text-white mb-4">What I Offer</h5>
+                                    <ul class="space-y-3 text-gray-700 dark:text-gray-300">
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <strong>11+ Preparation:</strong> Maths and Science
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <strong>GCSE:</strong> Maths, Physics, Chemistry, Biology
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <strong>A-Level:</strong> Maths, Further Maths, Physics
+                                        </li>
+                                        <li class="flex items-center">
+                                            <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                            </svg>
+                                            <strong>Exam Technique:</strong> Past paper practice and strategies
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Experience & Approach Section -->
+                <section class="mb-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <!-- Experience -->
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                                <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">My Experience</h4>
+                                <div class="space-y-4">
+                                    <div class="border-l-4 border-blue-500 pl-4">
+                                        <h5 class="font-bold text-gray-900 dark:text-white">2+ Years Tutoring Experience</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">Working with students across all levels from 11+ to A-Level</p>
+                                    </div>
+                                    <div class="border-l-4 border-green-500 pl-4">
+                                        <h5 class="font-bold text-gray-900 dark:text-white">Strong Academic Background</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">Deep understanding of maths and science concepts</p>
+                                    </div>
+                                    <div class="border-l-4 border-purple-500 pl-4">
+                                        <h5 class="font-bold text-gray-900 dark:text-white">Proven Results</h5>
+                                        <p class="text-gray-700 dark:text-gray-300">Students consistently improve their grades and confidence</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Teaching Approach -->
+                            <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                                <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-6">My Teaching Approach</h4>
+                                <div class="space-y-4">
+                                    <div class="flex items-start">
+                                        <div class="bg-blue-100 dark:bg-blue-900 rounded-full p-2 mr-4">
+                                            <svg class="w-5 h-5 text-blue-600 dark:text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-gray-900 dark:text-white">Personalized Learning</h5>
+                                            <p class="text-gray-700 dark:text-gray-300">Tailored sessions to match your learning style and pace</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-green-100 dark:bg-green-900 rounded-full p-2 mr-4">
+                                            <svg class="w-5 h-5 text-green-600 dark:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-gray-900 dark:text-white">Building Confidence</h5>
+                                            <p class="text-gray-700 dark:text-gray-300">Focus on understanding rather than memorization</p>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-start">
+                                        <div class="bg-purple-100 dark:bg-purple-900 rounded-full p-2 mr-4">
+                                            <svg class="w-5 h-5 text-purple-600 dark:text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h5 class="font-bold text-gray-900 dark:text-white">Exam Preparation</h5>
+                                            <p class="text-gray-700 dark:text-gray-300">Comprehensive exam technique and past paper practice</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Contact Section -->
+                <section class="mb-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg shadow-md p-8 text-white">
+                            <div class="text-center">
+                                <h4 class="text-3xl font-bold mb-4">Ready to Get Started?</h4>
+                                <p class="text-xl mb-6 opacity-90">Book a consultation to discuss your tutoring needs</p>
+                                <a href="contact.html" class="inline-block bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors duration-200">
+                                    Contact Me
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript for dropdown functionality and theme toggle -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html> 
