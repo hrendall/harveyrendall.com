@@ -1,0 +1,487 @@
+/* Custom CSS for Harvey Rendall Personal Website */
+/* This file contains additional styles that complement Tailwind CSS */
+
+/* ======================================== */
+/* HEADER ALIGNMENT FIXES - START */
+/* ======================================== */
+
+/* Force perfect alignment between navigation header and page header */
+/* This ensures the dividing lines and content are exactly aligned */
+
+/* Navigation container - remove any conflicting borders */
+nav {
+    /* Remove the border-r that's causing the offset */
+    border-right: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Navigation header container - force consistent height and padding */
+nav > div:first-child {
+    /* Force exact same height as page header */
+    min-height: 88px; /* 24px top + 24px bottom + 40px content = 88px */
+    display: flex;
+    align-items: center;
+    /* Force exact same horizontal padding as page header */
+    padding-left: 32px !important; /* px-8 = 32px */
+    padding-right: 32px !important;
+    padding-top: 24px !important; /* py-6 = 24px */
+    padding-bottom: 24px !important;
+    /* Remove any conflicting border styles */
+    border: none !important;
+    /* Force exact border positioning */
+    border-bottom: 1px solid rgb(229 231 235) !important; /* gray-200 */
+    margin: 0 !important;
+}
+
+/* Page header container - force consistent height and padding */
+main > header > div {
+    /* Force exact same height as navigation header */
+    min-height: 88px; /* 24px top + 24px bottom + 40px content = 88px */
+    display: flex;
+    align-items: center;
+    /* Force exact same horizontal padding as navigation header */
+    padding-left: 32px !important; /* px-8 = 32px */
+    padding-right: 32px !important;
+    padding-top: 24px !important; /* py-6 = 24px */
+    padding-bottom: 24px !important;
+    /* Remove any conflicting border styles */
+    border: none !important;
+    margin: 0 !important;
+}
+
+/* Force page header to have exact same border as navigation */
+main > header {
+    /* Remove any existing borders */
+    border: none !important;
+    /* Force exact same border as navigation header */
+    border-bottom: 1px solid rgb(229 231 235) !important; /* gray-200 */
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Dark mode border colors - ensure exact same colors */
+.dark nav > div:first-child {
+    border-bottom-color: rgb(55 65 81) !important; /* gray-700 */
+}
+
+.dark main > header {
+    border-bottom-color: rgb(55 65 81) !important; /* gray-700 */
+}
+
+/* Force text alignment to be exactly the same */
+/* Navigation header text */
+nav > div:first-child h1 {
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    font-size: 1.5rem !important; /* text-2xl */
+    font-weight: 700 !important;
+}
+
+/* Page header text */
+main > header h2 {
+    margin: 0 !important;
+    line-height: 1.2 !important;
+    font-size: 1.875rem !important; /* text-3xl */
+    font-weight: 700 !important;
+}
+
+/* ======================================== */
+/* HEADER ALIGNMENT FIXES - END */
+/* ======================================== */
+
+/* Typography Enhancements */
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    letter-spacing: -0.011em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.font-display {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.font-sans {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    letter-spacing: -0.011em;
+}
+
+/* Enhanced text readability */
+.text-lg, .text-xl, .text-2xl, .text-3xl, .text-4xl, .text-5xl {
+    line-height: 1.4;
+}
+
+p {
+    line-height: 1.7;
+    letter-spacing: -0.011em;
+}
+
+/* Custom scrollbar styling for webkit browsers */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Custom focus styles for better accessibility */
+.focus-visible:focus {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+}
+
+/* Smooth transitions for all interactive elements */
+* {
+    transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Custom animation for page load */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in-up {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+/* Hover effects for cards */
+.card-hover {
+    transition: all 0.3s ease;
+}
+
+.card-hover:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom button styles */
+.btn-primary {
+    @apply bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+}
+
+.btn-secondary {
+    @apply border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 px-6 py-3 rounded-lg font-medium transition-colors duration-200;
+}
+
+/* Custom link styles */
+.link-primary {
+    @apply text-blue-600 hover:text-blue-700 font-medium transition-colors duration-200;
+}
+
+/* Custom text selection color */
+::selection {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.dark ::selection {
+    background-color: #1e3a8a;
+    color: #dbeafe;
+}
+
+/* Custom loading animation */
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.animate-spin {
+    animation: spin 1s linear infinite;
+}
+
+/* Custom gradient backgrounds */
+.gradient-bg {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.gradient-bg-dark {
+    background: linear-gradient(135deg, #1e3a8a 0%, #7c3aed 100%);
+}
+
+/* Custom spacing utilities */
+.space-y-8 > * + * {
+    margin-top: 2rem;
+}
+
+.space-y-6 > * + * {
+    margin-top: 1.5rem;
+}
+
+/* Custom responsive utilities */
+@media (max-width: 768px) {
+    .mobile-hidden {
+        display: none;
+    }
+    
+    .mobile-full {
+        width: 100%;
+    }
+}
+
+/* Custom print styles */
+@media print {
+    .no-print {
+        display: none !important;
+    }
+    
+    body {
+        background: white !important;
+        color: black !important;
+    }
+    
+    a {
+        color: black !important;
+        text-decoration: underline !important;
+    }
+}
+
+/* Custom focus ring for form elements */
+.form-input:focus {
+    outline: none;
+    ring: 2px;
+    ring-color: #3b82f6;
+    ring-offset: 2px;
+}
+
+/* Custom animation for theme toggle */
+.theme-toggle {
+    transition: transform 0.3s ease;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+}
+
+/* Custom styles for code blocks (if you add any) */
+.code-block {
+    background-color: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    overflow-x: auto;
+}
+
+.dark .code-block {
+    background-color: #1e293b;
+    border-color: #334155;
+    color: #e2e8f0;
+}
+
+/* Custom styles for tables (if you add any) */
+.table-custom {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-custom th,
+.table-custom td {
+    padding: 0.75rem;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.dark .table-custom th,
+.dark .table-custom td {
+    border-bottom-color: #334155;
+}
+
+.table-custom th {
+    font-weight: 600;
+    background-color: #f8fafc;
+}
+
+.dark .table-custom th {
+    background-color: #1e293b;
+}
+
+/* Custom styles for blockquotes (if you add any) */
+.blockquote-custom {
+    border-left: 4px solid #3b82f6;
+    padding-left: 1rem;
+    margin: 1.5rem 0;
+    font-style: italic;
+    color: #6b7280;
+}
+
+.dark .blockquote-custom {
+    color: #9ca3af;
+}
+
+/* Custom styles for images */
+.img-responsive {
+    max-width: 100%;
+    height: auto;
+}
+
+.img-rounded {
+    border-radius: 0.5rem;
+}
+
+/* Custom styles for badges/tags */
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    border-radius: 9999px;
+    background-color: #e5e7eb;
+    color: #374151;
+}
+
+.dark .badge {
+    background-color: #374151;
+    color: #d1d5db;
+}
+
+.badge-primary {
+    background-color: #dbeafe;
+    color: #1e40af;
+}
+
+.dark .badge-primary {
+    background-color: #1e3a8a;
+    color: #dbeafe;
+}
+
+/* Custom styles for tooltips (if needed) */
+.tooltip {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    width: 120px;
+    background-color: #374151;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -60px;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* Custom styles for progress bars (if needed) */
+.progress-bar {
+    width: 100%;
+    height: 8px;
+    background-color: #e5e7eb;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #3b82f6;
+    transition: width 0.3s ease;
+}
+
+/* Custom styles for alerts/notifications */
+.alert {
+    padding: 1rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: #d1fae5;
+    color: #065f46;
+    border: 1px solid #a7f3d0;
+}
+
+.alert-error {
+    background-color: #fee2e2;
+    color: #991b1b;
+    border: 1px solid #fca5a5;
+}
+
+.alert-warning {
+    background-color: #fef3c7;
+    color: #92400e;
+    border: 1px solid #fcd34d;
+}
+
+.alert-info {
+    background-color: #dbeafe;
+    color: #1e40af;
+    border: 1px solid #93c5fd;
+}
+
+/* Dark mode alert styles */
+.dark .alert-success {
+    background-color: #064e3b;
+    color: #a7f3d0;
+    border-color: #047857;
+}
+
+.dark .alert-error {
+    background-color: #7f1d1d;
+    color: #fca5a5;
+    border-color: #dc2626;
+}
+
+.dark .alert-warning {
+    background-color: #78350f;
+    color: #fcd34d;
+    border-color: #d97706;
+}
+
+.dark .alert-info {
+    background-color: #1e3a8a;
+    color: #93c5fd;
+    border-color: #2563eb;
+} 

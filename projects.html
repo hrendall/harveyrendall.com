@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Harvey Rendall</title>
+    
+    <!-- Google Fonts for sophisticated typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN for development -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tailwind Configuration for Dark Mode -->
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'sans': ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+                        'display': ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- Custom CSS for additional styling -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Meta tags for SEO and social sharing -->
+    <meta name="description" content="Harvey Rendall's portfolio of projects and technical work">
+    <meta name="keywords" content="Harvey Rendall, projects, portfolio, technical work, development">
+    <meta name="author" content="Harvey Rendall">
+    
+    <!-- Favicon (you can add your own favicon later) -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body class="bg-gray-50 text-gray-900 dark:bg-gray-900 dark:text-gray-100 font-sans">
+    
+    <!-- Main container with side navigation -->
+    <div class="flex h-screen">
+        
+        <!-- Side Navigation Bar -->
+        <nav class="w-64 bg-white dark:bg-gray-800 shadow-lg border-r border-gray-200 dark:border-gray-700">
+            
+            <!-- Navigation Header with Name -->
+            <div class="px-8 py-6 border-b border-gray-200 dark:border-gray-700">
+                <h1 class="text-2xl font-bold text-gray-800 dark:text-white font-display">Harvey Rendall</h1>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="p-4">
+                <ul class="space-y-2">
+                    
+                    <!-- Home Link -->
+                    <li>
+                        <a href="index.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path>
+                            </svg>
+                            Home
+                        </a>
+                    </li>
+                    
+
+                    
+                    <!-- Travels Link -->
+                    <li>
+                        <a href="travels.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            Travels
+                        </a>
+                    </li>
+                    
+                    <!-- Articles Link -->
+                    <li>
+                        <a href="articles.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z"></path>
+                            </svg>
+                            Articles
+                        </a>
+                    </li>
+                    
+                    <!-- Projects Link with Dropdown -->
+                    <li class="relative">
+                        <button id="projects-dropdown" 
+                                class="flex items-center justify-between w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200 bg-blue-50 dark:bg-gray-700 text-blue-600 dark:text-blue-400">
+                            <div class="flex items-center">
+                                <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                Projects
+                            </div>
+                            <svg class="w-4 h-4 transition-transform duration-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </button>
+                        <ul id="projects-dropdown-menu" class="hidden mt-2 ml-4 space-y-1">
+                            <li>
+                                <a href="projects.html" class="block px-4 py-2 text-sm text-blue-600 dark:text-blue-400 font-medium rounded-lg transition-colors duration-200">
+                                    All Projects
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects/tutoringWebsite.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Tutoring Website
+                                </a>
+                            </li>
+                            <li>
+                                <a href="projects/programmableSmartCharger.html" class="block px-4 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                                    Programmable Smart Charger
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    
+                    <!-- CV Link -->
+                    <li>
+                        <a href="cv.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                            CV
+                        </a>
+                    </li>
+                    
+                    <!-- Contact Link -->
+                    <li>
+                        <a href="contact.html" 
+                           class="flex items-center px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
+                            <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                            </svg>
+                            Contact
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Theme Toggle Button -->
+            <div class="absolute bottom-4 left-4">
+                <button id="theme-toggle" 
+                        class="p-2 text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-700 rounded-lg transition-colors duration-200">
+                    <svg id="sun-icon" class="w-5 h-5 hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg id="moon-icon" class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Main Content Area -->
+        <main class="flex-1 overflow-y-auto bg-gray-50 dark:bg-gray-900">
+            
+            <!-- Page Header -->
+            <header class="bg-white dark:bg-gray-800 shadow-sm border-b border-gray-200 dark:border-gray-700">
+                <div class="px-8 py-6">
+                    <h2 class="text-3xl font-bold text-gray-900 dark:text-white font-display">Projects</h2>
+                </div>
+            </header>
+            
+            <!-- Page Content -->
+            <div class="p-8">
+                
+                <!-- ======================================== -->
+                <!-- INTRODUCTION SECTION - START -->
+                <!-- ======================================== -->
+                <section class="mb-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8">
+                            <!-- TO CUSTOMIZE: Change the title and description -->
+                            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4 font-display">My Work</h3>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 mb-6 leading-relaxed">
+                                Here you'll find a collection of projects I've worked on, from web applications to 
+                                creative coding experiments. Each project represents a learning opportunity and a 
+                                chance to solve interesting problems.
+                            </p>
+                            <p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+                                I believe in building things that are not only functional but also beautiful and 
+                                user-friendly. Feel free to explore the code, try out the demos, and reach out 
+                                if you'd like to collaborate on something interesting.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <!-- ======================================== -->
+                <!-- INTRODUCTION SECTION - END -->
+                <!-- ======================================== -->
+                
+                <!-- ======================================== -->
+                <!-- FEATURED PROJECT SECTION - START -->
+                <!-- ======================================== -->
+                <section class="mb-12">
+                    <div class="max-w-6xl mx-auto">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 font-display">Featured Project</h3>
+                        
+                        <!-- ======================================== -->
+                        <!-- FEATURED PROJECT CARD - START -->
+                        <!-- TO ADD/REMOVE: Copy this entire card structure to add new featured projects -->
+                        <!-- TO CUSTOMIZE: Change image, title, description, technologies, and links -->
+                        <!-- ======================================== -->
+                        <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden">
+                            <div class="md:flex">
+                                <!-- TO CUSTOMIZE: Replace the gradient background with your actual project screenshot -->
+                                <div class="md:w-1/2 bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center p-8">
+                                    <!-- TO CUSTOMIZE: Replace this placeholder with your actual project image -->
+                                    <!-- <img src="assets/images/projects/your-project-screenshot.jpg" alt="Project screenshot" class="w-full h-full object-cover"> -->
+                                    <svg class="w-24 h-24 text-white opacity-80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                    </svg>
+                                </div>
+                                <div class="md:w-1/2 p-8">
+                                    <div class="flex items-center mb-4">
+                                        <!-- TO CUSTOMIZE: Change the badge text -->
+                                        <span class="badge badge-primary">Featured</span>
+                                        <!-- TO CUSTOMIZE: Change the status -->
+                                        <span class="text-sm text-gray-500 dark:text-gray-400 ml-auto">Latest</span>
+                                    </div>
+                                    <!-- TO CUSTOMIZE: Change the project title -->
+                                    <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                                        Personal Website
+                                    </h4>
+                                    <!-- TO CUSTOMIZE: Change the project description -->
+                                    <p class="text-gray-600 dark:text-gray-400 mb-6 leading-relaxed">
+                                        A modern, responsive personal website built with HTML, Tailwind CSS, and vanilla JavaScript. 
+                                        Features dark/light mode, side navigation, and a clean, professional design.
+                                    </p>
+                                    <!-- TO CUSTOMIZE: Change the technology badges -->
+                                    <div class="flex flex-wrap gap-2 mb-6">
+                                        <span class="badge">HTML</span>
+                                        <span class="badge">CSS</span>
+                                        <span class="badge">JavaScript</span>
+                                        <span class="badge">Tailwind CSS</span>
+                                    </div>
+                                    <!-- TO CUSTOMIZE: Change the links to your actual project URLs -->
+                                    <div class="flex gap-4">
+                                        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                                            Live Demo
+                                        </a>
+                                        <a href="#" class="border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 px-4 py-2 rounded-lg font-medium transition-colors duration-200">
+                                            View Code
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- ======================================== -->
+                        <!-- FEATURED PROJECT CARD - END -->
+                        <!-- ======================================== -->
+                        
+                    </div>
+                </section>
+                <!-- ======================================== -->
+                <!-- FEATURED PROJECT SECTION - END -->
+                <!-- ======================================== -->
+                
+                <!-- ======================================== -->
+                <!-- ALL PROJECTS GRID - START -->
+                <!-- ======================================== -->
+                <section class="mb-12">
+                    <div class="max-w-6xl mx-auto">
+                        <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 font-display">All Projects</h3>
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            
+                            <!-- Project Card 1: Tutoring Website -->
+                            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
+                                <img src="assets/images/projects/tutoringWebsite.jpg" 
+                                     alt="Tutoring Website" 
+                                     class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                                        Tutoring Website
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        A comprehensive online tutoring platform with booking system, 
+                                        video conferencing, and progress tracking features.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="badge">React</span>
+                                        <span class="badge">Node.js</span>
+                                        <span class="badge">WebRTC</span>
+                                        <span class="badge">MongoDB</span>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <a href="projects/tutoringWebsite.html" class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details</a>
+                                        <span class="text-gray-400">•</span>
+                                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium text-sm">Live Demo</a>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                            <!-- Project Card 2: Programmable Smart Charger -->
+                            <article class="bg-white dark:bg-gray-800 rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-200">
+                                <img src="assets/images/projects/programmableSmartCharger.jpg" 
+                                     alt="Programmable Smart Charger" 
+                                     class="w-full h-48 object-cover">
+                                <div class="p-6">
+                                    <h4 class="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                                        Programmable Smart Charger
+                                    </h4>
+                                    <p class="text-gray-600 dark:text-gray-400 mb-4">
+                                        An intelligent battery charging system with programmable charging profiles, 
+                                        temperature monitoring, and safety features.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="badge">Arduino</span>
+                                        <span class="badge">C++</span>
+                                        <span class="badge">Electronics</span>
+                                        <span class="badge">IoT</span>
+                                    </div>
+                                    <div class="flex gap-2">
+                                        <a href="projects/programmableSmartCharger.html" class="text-blue-600 hover:text-blue-700 font-medium text-sm">View Details</a>
+                                        <span class="text-gray-400">•</span>
+                                        <a href="#" class="text-blue-600 hover:text-blue-700 font-medium text-sm">GitHub</a>
+                                    </div>
+                                </div>
+                            </article>
+                            
+                        </div>
+                    </div>
+                </section>
+                <!-- ======================================== -->
+                <!-- ALL PROJECTS GRID - END -->
+                <!-- ======================================== -->
+                
+
+                
+                <!-- Call to Action -->
+                <section class="mb-12">
+                    <div class="max-w-6xl mx-auto">
+                        <div class="bg-gradient-to-r from-purple-600 to-pink-600 rounded-lg shadow-md p-8 text-center text-white">
+                            <h3 class="text-2xl font-bold mb-4">Let's Build Something Together</h3>
+                            <p class="text-lg mb-6 opacity-90">
+                                I'm always interested in new opportunities and exciting projects. 
+                                If you have an idea or would like to collaborate, let's talk!
+                            </p>
+                            <a href="contact.html" 
+                               class="bg-white text-purple-600 hover:bg-gray-100 px-6 py-3 rounded-lg font-medium transition-colors duration-200">
+                                Get In Touch
+                            </a>
+                        </div>
+                    </div>
+                </section>
+                
+            </div>
+        </main>
+    </div>
+    
+    <!-- JavaScript for theme toggle functionality -->
+    <script src="assets/js/script.js"></script>
+    
+    <!-- Dropdown functionality -->
+    <script>
+        // Dropdown functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdowns = ['travels', 'articles', 'projects'];
+            
+            dropdowns.forEach(dropdownId => {
+                const button = document.getElementById(`${dropdownId}-dropdown`);
+                const menu = document.getElementById(`${dropdownId}-dropdown-menu`);
+                const arrow = button.querySelector('svg:last-child');
+                
+                button.addEventListener('click', function() {
+                    const isOpen = menu.classList.contains('hidden');
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(id => {
+                        if (id !== dropdownId) {
+                            document.getElementById(`${id}-dropdown-menu`).classList.add('hidden');
+                            document.getElementById(`${id}-dropdown`).querySelector('svg:last-child').style.transform = 'rotate(0deg)';
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    if (isOpen) {
+                        menu.classList.remove('hidden');
+                        arrow.style.transform = 'rotate(180deg)';
+                    } else {
+                        menu.classList.add('hidden');
+                        arrow.style.transform = 'rotate(0deg)';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 
