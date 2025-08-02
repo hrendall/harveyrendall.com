@@ -294,6 +294,16 @@
                             <!-- Contact Form -->
                             <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md p-8 h-fit">
                                 <h3 class="text-xl font-semibold text-gray-900 dark:text-white mb-6">Send a Message</h3>
+                            
+                            <!-- Success Message (hidden by default) -->
+                            <div id="success-message" class="hidden mb-6 p-4 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-700 text-green-700 dark:text-green-300 rounded-lg">
+                                <div class="flex items-center">
+                                    <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                    <span>Thank you for your message! I'll get back to you soon.</span>
+                                </div>
+                            </div>
                                 
                                 <form id="contact-form" class="space-y-6">
                                     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -365,7 +375,7 @@
                                             </svg>
                                             <div>
                                                 <p class="font-medium text-gray-900 dark:text-white">Email</p>
-                                                <a href="mailto:hclrendall@gmail.com" class="text-blue-600 dark:text-blue-400 hover:text-blue-700 dark:hover:text-blue-300 transition-colors duration-200">hclrendall@gmail.com</a>
+                                                <p class="text-gray-600 dark:text-gray-400">Use the contact form below</p>
                                             </div>
                                         </div>
                                         
@@ -440,6 +450,19 @@
     
     <!-- JavaScript for theme toggle functionality -->
     <script src="assets/js/script.js"></script>
+    
+    <!-- Contact form success message -->
+    <script>
+        // Check if user just submitted the form (URL contains success parameter)
+        if (window.location.search.includes('success=true')) {
+            const successMessage = document.getElementById('success-message');
+            if (successMessage) {
+                successMessage.classList.remove('hidden');
+                // Scroll to the success message
+                successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        }
+    </script>
     
     <!-- Dropdown functionality -->
     <script>

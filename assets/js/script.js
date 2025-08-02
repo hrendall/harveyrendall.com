@@ -98,16 +98,18 @@ document.addEventListener('DOMContentLoaded', function() {
         return emailRegex.test(email);
     }
     
-    // Contact Form Handler (for future contact form)
+    // Contact Form Handler
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', function(e) {
+        contactForm.addEventListener('submit', async function(e) {
             e.preventDefault();
             
             // Get form data
             const formData = new FormData(this);
             const email = formData.get('email');
             const message = formData.get('message');
+            const firstName = formData.get('first-name');
+            const lastName = formData.get('last-name');
             
             // Basic validation
             if (!email || !isValidEmail(email)) {
@@ -120,10 +122,48 @@ document.addEventListener('DOMContentLoaded', function() {
                 return;
             }
             
-            // Here you would typically send the form data to your server
-            // For now, we'll just show a success message
-            alert('Thank you for your message! I\'ll get back to you soon.');
-            this.reset();
+            if (!firstName || !lastName) {
+                alert('Please enter both first and last name.');
+                return;
+            }
+            
+            // Show loading state
+            const submitButton = this.querySelector('button[type="submit"]');
+            const originalText = submitButton.textContent;
+            submitButton.textContent = 'Sending...';
+            submitButton.disabled = true;
+            
+            try {
+                // Send to our Node.js backend
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        firstName,
+                        lastName,
+                        email,
+                        message
+                    })
+                });
+                
+                const result = await response.json();
+                
+                if (result.success) {
+                    alert('Thank you for your message! I\'ll get back to you soon.');
+                    this.reset();
+                } else {
+                    alert('Sorry, there was an error sending your message. Please try again.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('Sorry, there was an error sending your message. Please try again.');
+            } finally {
+                // Reset button state
+                submitButton.textContent = originalText;
+                submitButton.disabled = false;
+            }
         });
     }
     
