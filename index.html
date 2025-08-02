@@ -32,7 +32,7 @@
     <link rel="stylesheet" href="assets/css/style.css">
     
     <!-- Meta tags for SEO and social sharing -->
-    <meta name="description" content="Harvey Rendall's personal website - Travels, Articles, Projects, and CV">
+    <meta name="description" content="Harvey Rendall's personal website - Travels, Projects, and CV">
     <meta name="keywords" content="Harvey Rendall, personal website, travels, articles, projects">
     <meta name="author" content="Harvey Rendall">
     
@@ -126,7 +126,8 @@
                         </ul>
                     </li>
                     
-                    <!-- Articles Link with Dropdown -->
+                    <!-- Articles Link with Dropdown (Temporarily Hidden) -->
+                    <!--
                     <li class="relative">
                         <button id="articles-dropdown" 
                                 class="flex items-center justify-between w-full px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-blue-50 dark:hover:bg-gray-700 hover:text-blue-600 dark:hover:text-blue-400 rounded-lg transition-colors duration-200">
@@ -178,6 +179,7 @@
                             </li>
                         </ul>
                     </li>
+                    -->
                     
                     <!-- Projects Link with Dropdown -->
                     <li class="relative">
@@ -288,7 +290,7 @@
                                 Hi, I'm Harvey Rendall
                             </h1>
                             <p class="text-xl text-gray-600 dark:text-gray-400 mb-8 max-w-2xl mx-auto leading-relaxed">
-                                Welcome to my personal website where I share my travels, write articles, showcase projects, and provide my professional background.
+                                Welcome to my personal website where I share my travels, showcase projects, and provide my professional background.
                             </p>
                             <!-- TO CUSTOMIZE: Change the call-to-action buttons -->
                             <div class="flex justify-center space-x-4">
@@ -389,10 +391,11 @@
                         <!-- ======================================== -->
                         
                         <!-- ======================================== -->
-                        <!-- QUICK LINK CARD 2: ARTICLES - START -->
+                        <!-- QUICK LINK CARD 2: ARTICLES - START (Temporarily Hidden) -->
                         <!-- TO ADD/REMOVE: Copy this entire card structure to add new quick links -->
                         <!-- TO CUSTOMIZE: Change icon, title, description, and link -->
                         <!-- ======================================== -->
+                        <!--
                         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-200 p-6">
                             <div class="flex items-center mb-4">
                                 <svg class="w-8 h-8 text-green-600 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -403,6 +406,7 @@
                             <p class="text-gray-600 dark:text-gray-400 mb-4 leading-relaxed">Read my thoughts, insights, and articles on various topics.</p>
                             <a href="articles.html" class="text-green-600 hover:text-green-700 font-medium">Read Articles →</a>
                         </div>
+                        -->
                         <!-- ======================================== -->
                         <!-- QUICK LINK CARD 2: ARTICLES - END -->
                         <!-- ======================================== -->
@@ -483,7 +487,7 @@
     <script>
         // Dropdown functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const dropdowns = ['travels', 'articles', 'projects'];
+            const dropdowns = ['travels', 'projects'];
             
             dropdowns.forEach(dropdownId => {
                 const button = document.getElementById(`${dropdownId}-dropdown`);

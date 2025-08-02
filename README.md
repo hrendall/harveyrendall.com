@@ -19,10 +19,11 @@ harveyrendall.com/
 ├── index.html              # Home page
 ├── about.html              # About me page
 ├── travels.html            # Travel blog
-├── articles.html           # Articles and writing
+├── articles.html           # Articles and writing (temporarily hidden)
 ├── projects.html           # Portfolio and projects
 ├── cv.html                 # CV and resume
 ├── contact.html            # Contact information
+├── tutoring.html           # Tutoring services
 ├── assets/
 │   ├── css/
 │   │   └── style.css      # Custom styles
@@ -31,6 +32,13 @@ harveyrendall.com/
 │   └── images/            # Image assets
 └── README.md              # This file
 ```
+
+### 📝 Note: Articles Section Temporarily Hidden
+The articles section has been temporarily hidden from the navigation but the files remain in the codebase for future use. To restore the articles section:
+1. Uncomment the articles navigation links in all HTML files
+2. Uncomment the articles quick link card in `index.html`
+3. Update the JavaScript dropdown arrays to include 'articles'
+4. Update meta descriptions and welcome text to include articles
 
 ## 🎨 Design Features
 
